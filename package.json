@@ -1,0 +1,14 @@
+{
+  "name": "waste",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:8lenka8/waste.git",
+  "author": "Elena Nemtseva <elena@d8a.solutions>",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^11.3.2"
+  },
+  "scripts": {
+    "start": "serve ."
+  }
+}
