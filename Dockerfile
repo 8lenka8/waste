@@ -17,18 +17,38 @@ FROM node:10
 # Create app directory
 WORKDIR /usr/src/app
 
+RUN ls .
+RUN ls /usr/src/app/
+
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install 
+RUN npm install -g serve
 # If you are building your code for production
 # RUN npm ci --only=production
 # RUN npm install --only=production
 
+RUN ls .
+RUN ls /usr/src/app/
+
 # Bundle app source
 COPY . .
 
+RUN ls .
+RUN ls /usr/src/app/
+
+# COPY . /usr/src/app
+
+# RUN ls .
+# RUN ls /usr/src/app/
+
 EXPOSE 8080
-CMD [ "serve", "-s", "-l", "8080", "./src/" ]
+
+ADD entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "serve", "-s", "-l", "8080", "./src/" ]
+
+#CMD [ "serve", "-s", "-l", "8080", "./src/" ]
+#CMD serve -s -l 8080 ./src/
