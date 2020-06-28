@@ -30,4 +30,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "serve", "-s", "./src/" ]
+CMD [ "serve", "-s", "-l", "8080", "./src/" ]
