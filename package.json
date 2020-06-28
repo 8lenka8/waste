@@ -9,6 +9,6 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "serve -s --listen 8080 ./src/"
+    "start": "serve -s -l 8080 ./src/"
   }
 }

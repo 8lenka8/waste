@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM node:10.14.2
+FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -31,4 +31,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "serve", "-s", "--listen", "8080", "./src/" ]
+CMD [ "serve", "-s", "-l", "8080", "./src/" ]
