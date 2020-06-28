@@ -9,6 +9,6 @@
     "serve": "^11.3.2"
   },
   "scripts": {
-    "start": "serve ."
+    "start": "serve -s ./src/"
   }
 }
