@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM node:10
+FROM node:10.14.2
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -22,12 +22,13 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
+# RUN npm install 
+RUN npm install --only=production
 # If you are building your code for production
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY . .
+COPY . ./
 
 EXPOSE 8080
 CMD [ "serve", "-s", "-l", "8080", "./src/" ]
