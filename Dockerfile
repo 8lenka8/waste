@@ -22,13 +22,13 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-# RUN npm install 
-RUN npm install --only=production
+RUN npm install 
 # If you are building your code for production
 # RUN npm ci --only=production
+# RUN npm install --only=production
 
 # Bundle app source
-COPY . ./
+COPY . .
 
 EXPOSE 8080
-CMD [ "serve", "-s", "-l", "8080", "./src/" ]
+CMD [ "serve", "-s", "--listen", "8080", "./src/" ]
