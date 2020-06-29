@@ -25,7 +25,7 @@ RUN ls /usr/src/app/
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install -g serve
+RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
 # RUN npm install --only=production
@@ -48,7 +48,7 @@ EXPOSE 8080
 
 ADD entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "serve", "-s", "-l", "8080", "./src/" ]
+ENTRYPOINT [ "npm", "start" ]
 
 #CMD [ "serve", "-s", "-l", "8080", "./src/" ]
 #CMD serve -s -l 8080 ./src/
